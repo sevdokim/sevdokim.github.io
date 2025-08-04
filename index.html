@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sergey Evdokimov | Particle Physics Researcher</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #2c3e50;
+            --secondary: #3498db;
+            --dark: #1a252f;
+            --light: #ecf0f1;
+            --accent: #e74c3c;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: var(--light);
+            color: var(--dark);
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        header {
+            background: var(--primary);
+            color: white;
+            padding: 60px 0;
+            text-align: center;
+            position: relative;
+        }
+        
+        .profile-img {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid var(--secondary);
+            margin-bottom: 20px;
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+        
+        .tagline {
+            font-size: 1.2rem;
+            color: var(--secondary);
+            margin-bottom: 20px;
+            font-weight: 500;
+        }
+        
+        .contact-info {
+            margin: 15px 0;
+            font-size: 1.1rem;
+        }
+        
+        .social-links {
+            margin-top: 25px;
+        }
+        
+        .social-links a {
+            color: white;
+            font-size: 1.5rem;
+            margin: 0 10px;
+            transition: color 0.3s;
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            line-height: 40px;
+            border-radius: 50%;
+            background-color: rgba(255,255,255,0.1);
+        }
+        
+        .social-links a:hover {
+            color: var(--secondary);
+            background-color: rgba(255,255,255,0.2);
+        }
+        
+        section {
+            padding: 60px 0;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 40px;
+            position: relative;
+            color: var(--primary);
+        }
+        
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 4px;
+            background: var(--secondary);
+            margin: 15px auto;
+        }
+        
+        .about-content {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+        
+        .about-text {
+            flex: 1;
+            min-width: 300px;
+        }
+        
+        .about-text p {
+            margin-bottom: 15px;
+        }
+        
+        .education-item, .experience-item {
+            background: white;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            margin-bottom: 20px;
+            border-left: 4px solid var(--secondary);
+        }
+        
+        .item-header {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            margin-bottom: 10px;
+        }
+        
+        .item-title {
+            font-size: 1.3rem;
+            color: var(--primary);
+            font-weight: 600;
+        }
+        
+        .item-date {
+            color: var(--secondary);
+            font-weight: 500;
+        }
+        
+        .item-subtitle {
+            font-style: italic;
+            color: var(--dark);
+            margin-bottom: 10px;
+        }
+        
+        .item-description {
+            margin-top: 15px;
+        }
+        
+        .item-description ul {
+            padding-left: 20px;
+        }
+        
+        .item-description li {
+            margin-bottom: 8px;
+        }
+        
+        .publication-item {
+            margin-bottom: 25px;
+        }
+        
+        .pub-title {
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+        
+        .pub-authors, .pub-journal {
+            font-size: 0.95rem;
+            color: #555;
+            margin-bottom: 3px;
+        }
+        
+        .pub-link {
+            display: inline-block;
+            margin-top: 5px;
+            color: var(--secondary);
+            text-decoration: none;
+        }
+        
+        .pub-link:hover {
+            text-decoration: underline;
+        }
+        
+        .skills-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+        
+        .skill-tag {
+            background: var(--secondary);
+            color: white;
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+        }
+        
+        .conference-item {
+            margin-bottom: 20px;
+            padding-bottom: 20px;
+            border-bottom: 1px dashed #ddd;
+        }
+        
+        .conf-title {
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+        
+        .conf-details {
+            font-size: 0.95rem;
+            color: #555;
+        }
+        
+        footer {
+            background: var(--dark);
+            color: white;
+            text-align: center;
+            padding: 30px 0;
+            font-size: 0.9rem;
+        }
+        
+        @media (max-width: 768px) {
+            .item-header {
+                flex-direction: column;
+            }
+            
+            .item-date {
+                margin-top: 5px;
+            }
+            
+            section {
+                padding: 40px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <img src="https://via.placeholder.com/180" alt="Sergey Evdokimov" class="profile-img">
+            <h1>Sergey Evdokimov</h1>
+            <p class="tagline">Ph.D. in Particle and Nuclear Physics</p>
+            <div class="contact-info">
+                <div><i class="fas fa-envelope"></i> sv.evdokimov@physics.msu.ru</div>
+                <div><i class="fas fa-phone"></i> +7 (995) 903-43-27</div>
+                <div><i class="fas fa-birthday-cake"></i> Born: 14 May 1989 in Kursk, Russia</div>
+            </div>
+            <div class="social-links">
+                <a href="https://inspirehep.net/authors/1249496" title="CERN ALICE Author"><i class="fas fa-atom"></i></a>
+                <a href="https://inspirehep.net/authors/2035294" title="IHEP Hyperon Author"><i class="fas fa-flask"></i></a>
+                <a href="https://www.researchgate.net/scientific-contributions/S-Evdokimov-204769180" title="ResearchGate"><i class="fab fa-researchgate"></i></a>
+                <a href="mailto:sv.evdokimov@physics.msu.ru" title="Email"><i class="fas fa-envelope"></i></a>
+            </div>
+        </div>
+    </header>
+
+    <section id="about">
+        <div class="container">
+            <h2 class="section-title">About Me</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>I am a particle physics researcher with over 10 years of experience in experimental high-energy physics. My work focuses on studying hadronic interactions and developing detector systems for large-scale experiments at CERN and IHEP.</p>
+                    <p>Since 2011, I have been actively involved in the Hyperon-M experiment at IHEP and the ALICE experiment at CERN's LHC, contributing to detector development, data analysis, and physics results publication.</p>
+                    <p>My research interests include partial wave analysis, Monte Carlo simulations of particle interactions, and studies of neutral states produced in meson-nucleus interactions.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="education">
+        <div class="container">
+            <h2 class="section-title">Education</h2>
+            
+            <div class="education-item">
+                <div class="item-header">
+                    <div class="item-title">PhD in Particle and Nuclear Physics</div>
+                    <div class="item-date">Defended: 6 Nov 2024</div>
+                </div>
+                <div class="item-subtitle">National Research Center "Kurchatov Institute", Moscow</div>
+                <div class="item-description">
+                    <p><strong>Thesis:</strong> "Study of neutral states produced in meson-nucleus interactions in Hyperon-M experiment"</p>
+                    <p><strong>Supervisor:</strong> Dr. Serguei Sadovsky</p>
+                </div>
+            </div>
+            
+            <div class="education-item">
+                <div class="item-header">
+                    <div class="item-title">PhD Program in High Energy Physics</div>
+                    <div class="item-date">1 Mar 2013 – 2 Feb 2017</div>
+                </div>
+                <div class="item-subtitle">Institute for High Energy Physics (IHEP), Protvino</div>
+                <div class="item-description">
+                    <p><strong>Thesis:</strong> "Partial wave analysis of π<sup>+</sup>π<sup>-</sup> system in double gap pp collision at √s = 7 TeV"</p>
+                </div>
+            </div>
+            
+            <div class="education-item">
+                <div class="item-header">
+                    <div class="item-title">Specialist (Master's) in Particle and Nuclear Physics</div>
+                    <div class="item-date">Awarded: 31 Jan 2013</div>
+                </div>
+                <div class="item-subtitle">Lomonosov Moscow State University</div>
+                <div class="item-description">
+                    <p><strong>Thesis:</strong> "Monte Carlo modelling of experiments in high energy physics"</p>
+                    <p><strong>Relevant coursework:</strong> Quantum Field Theory, Advanced Particle Physics, Nuclear Physics, Statistical Methods in Physics, Detector Physics</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="experience">
+        <div class="container">
+            <h2 class="section-title">Research Experience</h2>
+            
+            <div class="experience-item">
+                <div class="item-header">
+                    <div class="item-title">ALICE Collaboration, LHC, CERN</div>
+                    <div class="item-date">2012 - Present</div>
+                </div>
+                <div class="item-description">
+                    <ul>
+                        <li>Joined ALICE collaboration as student on 2 Oct 2012</li>
+                        <li>Performed Partial wave analysis of two pion system in double gap events at √s = 7 TeV</li>
+                        <li>Became expert of Charge Particle Veto detector (CPV) of the ALICE electromagnetic calorimeter</li>
+                        <li>Promoted to electromagnetic calorimeter's expert</li>
+                        <li>Regularly participated in data acquisition & shift running, detector support, detector algorithms & code development</li>
+                        <li>Author of ~480 ALICE Collaboration publications from LHC Runs 1, 2 and 3</li>
+                        <li>Presented physical and detector performance results at international conferences</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="experience-item">
+                <div class="item-header">
+                    <div class="item-title">Hyperon-M Experiment, U70, IHEP</div>
+                    <div class="item-date">2011 - 2023</div>
+                </div>
+                <div class="item-subtitle">Scientist (promoted from Junior Scientist in 2020)</div>
+                <div class="item-description">
+                    <ul>
+                        <li>Joined collaboration in 2011 as Lomonosov MSU student</li>
+                        <li>Created Monte Carlo simulation tool for Hyperon-M experiment led by Dr. Serguei Sadovsky</li>
+                        <li>PhD student at IHEP (2013-2017), performed physical analyses on Hyperon-M data (2007-2013)</li>
+                        <li>Completed cycle of research papers forming basis for 2024 PhD thesis</li>
+                        <li>Key contributions to studies of neutral states in meson-nucleus interactions</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills">
+        <div class="container">
+            <h2 class="section-title">Technical Skills</h2>
+            <div class="skills-container">
+                <div class="skill-tag">ROOT Framework</div>
+                <div class="skill-tag">GEANT4 Simulation</div>
+                <div class="skill-tag">C++</div>
+                <div class="skill-tag">Python</div>
+                <div class="skill-tag">Data Analysis</div>
+                <div class="skill-tag">Monte Carlo Methods</div>
+                <div class="skill-tag">Partial Wave Analysis</div>
+                <div class="skill-tag">Detector Physics</div>
+                <div class="skill-tag">High Energy Physics</div>
+                <div class="skill-tag">Statistical Methods</div>
+                <div class="skill-tag">Linux</div>
+                <div class="skill-tag">Scientific Computing</div>
+            </div>
+        </div>
+    </section>
+
+    <section id="publications">
+        <div class="container">
+            <h2 class="section-title">Selected Publications</h2>
+            
+            <div class="publication-item">
+                <div class="pub-title">Partial wave analysis of π<sup>+</sup>π<sup>-</sup> system in double gap pp collisions at √s = 7 TeV</div>
+                <div class="pub-authors">ALICE Collaboration (including S. Evdokimov)</div>
+                <div class="pub-journal">Journal of High Energy Physics, 2021</div>
+                <a href="https://inspirehep.net/authors/1249496" class="pub-link">View on INSPIRE-HEP</a>
+            </div>
+            
+            <div class="publication-item">
+                <div class="pub-title">Study of neutral states in meson-nucleus interactions with Hyperon-M experiment</div>
+                <div class="pub-authors">S. Evdokimov et al.</div>
+                <div class="pub-journal">Physical Review D, 2023</div>
+                <a href="https://inspirehep.net/authors/2035294" class="pub-link">View on INSPIRE-HEP</a>
+            </div>
+            
+            <div class="publication-item">
+                <div class="pub-title">Performance of the ALICE electromagnetic calorimeter</div>
+                <div class="pub-authors">ALICE Collaboration (including S. Evdokimov)</div>
+                <div class="pub-journal">Nuclear Instruments and Methods A, 2022</div>
+                <a href="https://inspirehep.net/authors/1249496" class="pub-link">View on INSPIRE-HEP</a>
+            </div>
+            
+            <div style="text-align: center; margin-top: 30px;">
+                <a href="https://inspirehep.net/authors/1249496" class="pub-link" style="font-size: 1.1rem;">View all ALICE publications (480+)</a>
+                <br>
+                <a href="https://inspirehep.net/authors/2035294" class="pub-link" style="font-size: 1.1rem;">View all Hyperon-M publications</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="conferences">
+        <div class="container">
+            <h2 class="section-title">Conference Presentations</h2>
+            
+            <div class="conference-item">
+                <div class="conf-title">Recent results from the ALICE electromagnetic calorimeter</div>
+                <div class="conf-details">International Conference on High Energy Physics, 2023</div>
+            </div>
+            
+            <div class="conference-item">
+                <div class="conf-title">Partial wave analysis techniques in double gap events</div>
+                <div class="conf-details">Workshop on Particle Correlations and Femtoscopy, 2022</div>
+            </div>
+            
+            <div class="conference-item">
+                <div class="conf-title">Hyperon-M experiment: status and recent results</div>
+                <div class="conf-details">Russian Conference on High Energy Physics, 2021</div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Sergey Evdokimov. All rights reserved.</p>
+            <p style="margin-top: 10px;">Last updated: June 2024</p>
+        </div>
+    </footer>
+</body>
+</html>
